@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BlueOniWay | Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+
+      <!-- Lang switcher -->
+      <div class="lang-bar">
+        <div class="lang-switch">
+          <button class="lang-btn active" id="btn-th" onclick="setLang('th')">TH</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-eyebrow">
+          <span class="badge"><span class="badge-dot"></span>BlueOniWay</span>
+        </div>
+
+        <h1 data-lang="th" class="visible">Policy สำหรับการใช้งาน<br>แอปและเว็บไซต์</h1>
+        <h1 data-lang="en">App &amp; Website<br>Policy Center</h1>
+
+        <p data-lang="th" class="visible">
+          ศูนย์รวมเอกสารนโยบายของแอป BlueOniWay สำหรับผู้ใช้และผู้เยี่ยมชมเว็บไซต์
+          เนื้อหาอ้างอิงจากการทำงานจริงของโปรเจกต์ (Firebase Analytics, Crashlytics, Messaging และการเก็บข้อมูลในเครื่อง)
+        </p>
+        <p data-lang="en">
+          Central repository of policy documents for the BlueOniWay app and related web pages.
+          Covers Firebase Analytics, Crashlytics, Cloud Messaging, and on-device data storage.
+        </p>
+
+        <div class="meta">
+          <span data-lang="th" class="visible">อัปเดตล่าสุด:</span>
+          <span data-lang="en">Last updated:</span>
+          29 March 2026
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="card-grid">
+        <a class="card" href="privacy.html">
+          <div class="card-icon cyan">🔒</div>
+          <h3 data-lang="th" class="visible">Privacy Policy</h3>
+          <h3 data-lang="en">Privacy Policy</h3>
+          <p data-lang="th" class="visible">การเก็บ ใช้ และแบ่งปันข้อมูลของคุณ</p>
+          <p data-lang="en">How we collect, use, and share your data</p>
+          <div class="card-arrow">
+            <span data-lang="th" class="visible">อ่านนโยบาย</span>
+            <span data-lang="en">Read policy</span>
+            →
+          </div>
+        </a>
+        <a class="card" href="terms.html">
+          <div class="card-icon purple">📋</div>
+          <h3 data-lang="th" class="visible">Terms of Service</h3>
+          <h3 data-lang="en">Terms of Service</h3>
+          <p data-lang="th" class="visible">ข้อกำหนดและเงื่อนไขการใช้งานแอป</p>
+          <p data-lang="en">Terms and conditions for using the app</p>
+          <div class="card-arrow">
+            <span data-lang="th" class="visible">อ่านข้อกำหนด</span>
+            <span data-lang="en">Read terms</span>
+            →
+          </div>
+        </a>
+      </div>
+
+      <!-- Scope section -->
+      <div class="section-header">
+        <h2 data-lang="th" class="visible">ขอบเขตนโยบาย</h2>
+        <h2 data-lang="en">Policy Scope</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="section-group">
+        <div class="section">
+          <p data-lang="th" class="visible">
+            เอกสารเหล่านี้ครอบคลุมการใช้งานแอป BlueOniWay และหน้าเว็บที่โฮสต์บน GitHub Pages
+            หากมีการเปลี่ยนแปลงฟีเจอร์หรือบริการ นโยบายจะได้รับการอัปเดตตามความเหมาะสม
+          </p>
+          <p data-lang="en">
+            These documents cover the BlueOniWay mobile app and the policy pages hosted on GitHub Pages.
+            We update the policies whenever features or services change.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">BlueOniWay · Policy Center</div>
+    </main>
+
+    <script>
+      function setLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+          el.classList.toggle('visible', el.dataset.lang === lang);
+        });
+        document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.documentElement.lang = lang;
+        localStorage.setItem('rpd-lang', lang);
+      }
+
+      // Restore saved preference
+      const saved = localStorage.getItem('rpd-lang');
+      if (saved && saved !== 'th') setLang(saved);
+    </script>
+  </body>
+</html>

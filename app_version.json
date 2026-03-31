@@ -1,0 +1,19 @@
+{
+  "data": {
+    "android": {
+      "latestVersion": "1.0.0",
+      "minimumVersion": "1.0.0",
+      "forceUpdate": true,
+      "storeUrl": "https://play.google.com/store/apps/details?id=com.blueoni.ninmoney",
+      "message": "กรุณาอัปเดตแอปเป็นเวอร์ชันล่าสุด"
+    },
+    "ios": {
+      "latestVersion": "1.0.0",
+      "minimumVersion": "1.0.0",
+      "forceUpdate": true,
+      "storeUrl": "",
+      "message": "กรุณาอัปเดตแอปเป็นเวอร์ชันล่าสุด"
+    }
+  },
+  "shopURL" : "https://collshp.com/blueoniway/category/3561805?view=storefront"
+}
